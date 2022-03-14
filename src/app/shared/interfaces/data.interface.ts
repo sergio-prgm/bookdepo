@@ -1,4 +1,3 @@
-
 export interface ApiResponse {
   items: Book[]
 }
@@ -49,7 +48,7 @@ export interface BookInfo {
     allowAnonLogging: boolean;
     contentVersion: string;
     panelizationSummary: PanelizationSummary;
-    imageLinks: ImageLinks;
+    imageLinks?: ImageLinks;
     language: string;
     previewLink: string;
     infoLink: string;

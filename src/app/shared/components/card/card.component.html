@@ -1,7 +1,7 @@
 <article>
   <a target="_blank" href="{{ book.volumeInfo.infoLink }}">
-    <img *ngIf="book.volumeInfo.imageLinks.thumbnail; else fallBack"
-      src="{{ book.volumeInfo.imageLinks.thumbnail }}"
+    <img *ngIf="book.volumeInfo.imageLinks?.thumbnail; else fallBack"
+      src="{{ book.volumeInfo.imageLinks?.thumbnail }}"
       alt="{{ book.volumeInfo.title }}"
     />
     <ng-template #fallBack>

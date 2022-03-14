@@ -1,5 +1,5 @@
 <p>search works!</p>
 <app-search-bar (submitted)="onSearch($event)"></app-search-bar>
-<ng-container *ngFor="let book of book$ | async" >
+<ng-container *ngFor="let book of books$ | async" >
   <app-card [book]="book" ></app-card>
 </ng-container>
