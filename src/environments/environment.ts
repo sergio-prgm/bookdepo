@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: 'AIzaSyCjnzdqSQ1UnzEOPm6xceX8JJo3l4pLPpQ',
+  url: 'https://www.googleapis.com/books/v1/volumes',
+  q: 'https://www.googleapis.com/books/v1/volumes?',
+  qparams: 'q=inauthor:Jonathan+Franzen&key=',
 };
 
 /*

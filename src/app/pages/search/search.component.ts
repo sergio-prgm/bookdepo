@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '@app/shared/services/api.service';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiSvc: ApiService) {
+    
+   }
 
   ngOnInit(): void {
+  }
+
+  onSearch(term: string): void {
+    
+    this.apiSvc.search(term)
+    .pipe(
+      tap(res => console.log(res))
+    )
+    .subscribe()
   }
 
 }
