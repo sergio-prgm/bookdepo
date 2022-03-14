@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearchModule } from './pages/search/search.module';
+import { SearchBarComponent } from './shared/components/search-bar/search-bar.component';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchBarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
