@@ -1,1 +1,18 @@
-<p>header works!</p>
+<header>
+  <nav class="menu" role="navigation">
+    <a [routerLink]="['/']" routerLinkActive="active">
+      <img src="../../../assets/img/open-book.png" alt="logo" />
+    </a>
+    <ul>
+      <li>
+        <a [routerLink]="['/favorites']" routerLinkActive="active">Favorites</a>
+      </li>
+      <li>
+        <a [routerLink]="['/collections']" routerLinkActive="active">Collections</a>
+      </li>
+      <li>
+        <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+      </li>
+    </ul>
+  </nav>
+</header>

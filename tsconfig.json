@@ -5,9 +5,9 @@
     "baseUrl": "./",
     "paths": {
       "@app/*": ["src/app/*"],
-      "@shared/*": ["src/app/shared"],
-      "@pages/*": ["src/app/pages"],
-      "@environments/*": ["src/environments/*"]
+      "@shared/*": ["src/app/shared/*"],
+      "@pages/*": ["src/app/components/pages/*"],
+      "@environment/*": ["src/environments/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

@@ -1,0 +1,31 @@
+@import "../../../../variables/colors";
+nav.menu {
+  display: flex;
+  gap: 2rem;
+
+  img {
+    width: 75px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 2rem 6rem;
+    width: 100%;
+    li {
+      list-style: none;
+    }
+    a {
+      &:visited,
+      &:focus {
+        color: $neutral-900;
+      }
+
+      &:hover {
+        color: $accent-500;
+      }
+    }
+  }
+}
