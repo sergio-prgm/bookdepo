@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
 
 
 @Component({
@@ -37,7 +37,11 @@ export class SearchBarComponent implements OnInit {
   onChange(): void {
     this.searchInput.valueChanges.
     pipe(
-      tap(res => this.submitted.emit(res))
+      map((search: string) => search.split(' ').join('+')),
+      debounceTime(350),
+      distinctUntilChanged(),
+      filter((search: string) => search !== ''),
+      tap((search: string) => this.submitted.emit(search))
     ).subscribe()
   }
 

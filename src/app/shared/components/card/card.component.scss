@@ -1,0 +1,15 @@
+article {
+  /* border: 2px solid lightgray; */
+  box-shadow: 0 0 10px rgba(172, 172, 172, 0.2);
+  border-radius: 5px;
+  background-color: hsl(0, 0, 98);
+  display: flex;
+  gap: 0.7rem;
+  width: 340px;
+  height: 205px;
+  padding-right: 0.8rem;
+  overflow: hidden;
+  img {
+    height: 205px;
+  }
+}

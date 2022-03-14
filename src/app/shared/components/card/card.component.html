@@ -1,1 +1,19 @@
-<p>card works!</p>
+<article>
+  <a target="_blank" href="{{ book.volumeInfo.infoLink }}">
+    <img *ngIf="book.volumeInfo.imageLinks.thumbnail; else fallBack"
+      src="{{ book.volumeInfo.imageLinks.thumbnail }}"
+      alt="{{ book.volumeInfo.title }}"
+    />
+    <ng-template #fallBack>
+      <img src="../../../../assets/img/404.jpeg" alt="error">
+    </ng-template>
+  </a>
+  <div class="card-text">
+    <h3>{{ book.volumeInfo.title }}</h3>
+    <a href="#" target="_blank" rel="noopener noreferrer"
+      ><h4>{{ book.volumeInfo.authors[0] }}</h4></a
+    >
+    <p>{{ book.volumeInfo.publishedDate | date: 'longDate':'es' }}</p>
+    <p>{{ book.volumeInfo.pageCount }} páginas</p>
+  </div>
+</article>
