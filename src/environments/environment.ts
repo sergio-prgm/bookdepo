@@ -5,9 +5,10 @@
 export const environment = {
   production: false,
   apiKey: 'AIzaSyCjnzdqSQ1UnzEOPm6xceX8JJo3l4pLPpQ',
-  url: 'https://www.googleapis.com/books/v1/volumes',
-  q: 'https://www.googleapis.com/books/v1/volumes?',
-  qparams: 'q=inauthor:Jonathan+Franzen&key=',
+  searchUrl: 'https://www.googleapis.com/books/v1/volumes',
+  listUrl: 'https://www.googleapis.com/books/v1/users/101050476007113578714/bookshelves',
+  bolano: '/1002/volumes',
+  javascript: '/1001/volumes'
 };
 
 /*
