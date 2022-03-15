@@ -16,7 +16,7 @@ export class ApiService {
 
   searchData(item: string): void {
     const params = {
-      q: `inauthor:${item}`,
+      q: `${item}`,
       key: environment.apiKey
     }
 
