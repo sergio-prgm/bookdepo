@@ -9,15 +9,15 @@ import { filter, Observable, tap } from 'rxjs';
   styleUrls: ['./collections.component.scss']
 })
 export class CollectionsComponent implements OnInit {
-  books$: Observable<Book[]> = this.apiSvc.getData()
-  books!: Book[]
+  books$ = this.apiSvc.books$
 
   constructor(private apiSvc: ApiService) { }
 
   ngOnInit(): void {
-    this.books$
-    .subscribe(books => this.books = books)
-    console.log(this.books)
+    this.apiSvc.getData()
+    // this.books$
+    // .subscribe(books => this.books = books)
+    // console.log(this.books)
   }
 
 }

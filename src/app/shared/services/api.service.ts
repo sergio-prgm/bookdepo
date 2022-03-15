@@ -26,37 +26,33 @@ export class ApiService {
       tap(books => {
         this.addImg([...books])
         console.log(books)
-      }),
+      })
     ).subscribe()
   }
 
-  getData(): Observable<Book[]> {
+  getData(): void {
     const params = {
       key: environment.apiKey
     }
 
-    return this.http.get<ApiResponse>(environment.listUrl + environment.bolano, {params})
-      .pipe(
+     this.http.get<ApiResponse>(environment.listUrl + environment.bolano, {params})
+     .pipe(
       pluck('items'),
-      // tap(books => {
-      //   this.addImg(books)
-      //   console.log(books)
-      // }),
-      // catchError(error => {
-      //   console.warn(error.message)
-      //   return of(error)
-      // } )
-    )
+      tap(books => {
+        this.addImg([...books])
+        console.log(books)
+      })
+     ).subscribe()
   }
 
   private addImg(books: Book[]): void {
-    let bookImg = {
-      volumeInfo: {
-        imageLinks: {
-          thumbnail: 'https://scrc.siu.edu/_common/images/new-images/rb3.jpg'
-        }
-      }
-    }
+    // let bookImg = {
+    //   volumeInfo: {
+    //     imageLinks: {
+    //       thumbnail: 'https://scrc.siu.edu/_common/images/new-images/rb3.jpg'
+    //     }
+    //   }
+    // }
     const newBook = books.filter(book => book.volumeInfo.authors
     )
 

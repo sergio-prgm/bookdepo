@@ -10,7 +10,7 @@ import { filter, map, Observable, take, tap } from 'rxjs';
 })
 export class SearchComponent implements OnInit {
   books$ = this.apiSvc.books$
-  books!: Book[]
+  // books!: Book[]
 
   constructor(private apiSvc: ApiService) {
     
