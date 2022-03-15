@@ -1,6 +1,6 @@
 <h2>Bienvenido al punto de encuentro de todos tus libros</h2>
 <div class="card-container">
-  <div *ngFor="let book of books$ | async">
+  <div *ngFor="let book of books">
     <app-card [book]="book" ></app-card>
   </div>
 </div>

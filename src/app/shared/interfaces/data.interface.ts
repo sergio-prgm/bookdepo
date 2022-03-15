@@ -13,76 +13,74 @@ export interface Book {
   searchInfo: SearchInfo;
 }
 
-export interface IndustryIdentifier {
+export interface BookInfo {
+  title: string;
+  authors: string[];
+  publisher: string;
+  publishedDate: string;
+  // description: string;
+  // industryIdentifiers: IndustryIdentifier[];
+  // readingModes: ReadingModes;
+  pageCount: number;
+  // printType: string;
+  categories: string[];
+  // maturityRating: string;
+  // allowAnonLogging: boolean;
+  // contentVersion: string;
+  // panelizationSummary: PanelizationSummary;
+  imageLinks?: ImageLinks;
+  language: string;
+  previewLink: string;
+  infoLink: string;
+  // canonicalVolumeLink: string;
+}
+interface IndustryIdentifier {
     type: string;
     identifier: string;
 }
-
-export interface ReadingModes {
+interface ReadingModes {
     text: boolean;
     image: boolean;
 }
 
-export interface PanelizationSummary {
+interface PanelizationSummary {
     containsEpubBubbles: boolean;
     containsImageBubbles: boolean;
 }
 
-export interface ImageLinks {
-    smallThumbnail: string;
+interface ImageLinks {
+    smallThumbnail?: string;
     thumbnail: string;
 }
 
-export interface BookInfo {
-    title: string;
-    authors: string[];
-    publisher: string;
-    publishedDate: string;
-    description: string;
-    industryIdentifiers: IndustryIdentifier[];
-    readingModes: ReadingModes;
-    pageCount: number;
-    printType: string;
-    categories: string[];
-    maturityRating: string;
-    allowAnonLogging: boolean;
-    contentVersion: string;
-    panelizationSummary: PanelizationSummary;
-    imageLinks?: ImageLinks;
-    language: string;
-    previewLink: string;
-    infoLink: string;
-    canonicalVolumeLink: string;
-}
-
-export interface ListPrice {
+interface ListPrice {
     amount: number;
     currencyCode: string;
 }
 
-export interface RetailPrice {
+interface RetailPrice {
     amount: number;
     currencyCode: string;
 }
 
-export interface ListPrice2 {
+interface ListPrice2 {
     amountInMicros: number;
     currencyCode: string;
 }
 
-export interface RetailPrice2 {
+interface RetailPrice2 {
     amountInMicros: number;
     currencyCode: string;
 }
 
-export interface Offer {
+interface Offer {
     finskyOfferType: number;
     listPrice: ListPrice2;
     retailPrice: RetailPrice2;
     giftable: boolean;
 }
 
-export interface SaleInfo {
+interface SaleInfo {
     country: string;
     saleability: string;
     isEbook: boolean;
@@ -92,17 +90,17 @@ export interface SaleInfo {
     offers: Offer[];
 }
 
-export interface Epub {
+interface Epub {
     isAvailable: boolean;
     acsTokenLink: string;
 }
 
-export interface Pdf {
+interface Pdf {
     isAvailable: boolean;
     acsTokenLink: string;
 }
 
-export interface AccessInfo {
+interface AccessInfo {
     country: string;
     viewability: string;
     embeddable: boolean;
@@ -115,7 +113,7 @@ export interface AccessInfo {
     quoteSharingAllowed: boolean;
 }
 
-export interface SearchInfo {
+interface SearchInfo {
     textSnippet: string;
 }
 

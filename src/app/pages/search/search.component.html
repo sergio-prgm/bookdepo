@@ -1,5 +1,12 @@
-<p>search works!</p>
-<app-search-bar (submitted)="onSearch($event)"></app-search-bar>
-<ng-container *ngFor="let book of books$ | async" >
-  <app-card [book]="book" ></app-card>
+
+<button (click)="onSearch()">Dale</button>
+<app-search-bar></app-search-bar>
+<ng-container *ngIf="books$ | async as books; else showEmpty" >
+  <app-card *ngFor="let book of books" [book]="book" ></app-card>
 </ng-container>
+<ng-template #showEmpty>
+  <div class="noResults">
+    <h2 class="title">No results</h2>
+    <img src="../../../assets/img/404.jpeg" alt="404">
+  </div>
+</ng-template>

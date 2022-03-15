@@ -9,7 +9,8 @@ import { filter, map, Observable, take, tap } from 'rxjs';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  books$!: Observable<Book[]>
+  books$ = this.apiSvc.books$
+  books!: Book[]
 
   constructor(private apiSvc: ApiService) {
     
@@ -18,11 +19,10 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSearch(term: string): void {
-    this.books$ = this.apiSvc.searchData(term)
-    // this.books$.pipe(
-    //   tap(res => console.log(res))
-    // ).subscribe()
+  onSearch(): void {
+  //   this.books$.pipe(
+  //     tap(res => console.log(res))
+  //   ).subscribe()
   }
 
 }

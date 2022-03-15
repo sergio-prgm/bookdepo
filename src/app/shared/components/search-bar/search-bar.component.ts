@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy  } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
+import { ApiService } from '@app/shared/services/api.service';
+import { debounceTime, distinctUntilChanged, filter, map, Subject, takeUntil, tap } from 'rxjs';
 
 
 @Component({
@@ -15,7 +16,6 @@ import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
         class="searchbar__input"
         placeholder="Search book"
         [formControl]="searchInput">
-        <button>Go!</button>
         <button>Clear</button>
       </div>
     </div>
@@ -23,25 +23,34 @@ import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs';
 `,
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent implements OnDestroy {
   searchInput = new FormControl('')
-  @Output() submitted = new EventEmitter<string>()
+  private destroy$ = new Subject<unknown>()
 
-  constructor() {
-   }
+  // @Output() submitted = new EventEmitter<string>()
 
-  ngOnInit(): void {
+  constructor(private apiSvc: ApiService) {
     this.onChange()
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next({})
+    this.destroy$.complete()
+  }
+
+  onClear(): void {
+    this.searchInput.reset()
+  }
+
   onChange(): void {
-    this.searchInput.valueChanges.
-    pipe(
+    this.searchInput.valueChanges
+    .pipe(
       map((search: string) => search.split(' ').join('+')),
       debounceTime(350),
       distinctUntilChanged(),
       filter((search: string) => search !== ''),
-      tap((search: string) => this.submitted.emit(search))
+      tap((search: string) => this.apiSvc.searchData(search)),
+      // takeUntil(this.destroy$)
     ).subscribe()
   }
 

@@ -5,11 +5,11 @@
       alt="{{ book.volumeInfo.title }}"
     />
     <ng-template #fallBack>
-      <img src="../../../../assets/img/404.jpeg" alt="error">
+      <img src="../../../../assets/img/404-book.jpg" alt="error">
     </ng-template>
   </a>
   <div class="card-text">
-    <h3>{{ book.volumeInfo.title }}</h3>
+    <h3>{{ book.volumeInfo?.title }}</h3>
     <a href="#" target="_blank" rel="noopener noreferrer"
       ><h4>{{ book.volumeInfo.authors[0] }}</h4></a
     >
