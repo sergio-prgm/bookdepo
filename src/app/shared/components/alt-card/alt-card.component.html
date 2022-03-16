@@ -1,11 +1,24 @@
 <article>
-  <div [style.background-image]="'url(' + search.volumeInfo.imageLinks?.thumbnail + ')'" class="card">
+  <div
+    [style.background-image]="
+      'url(' + search.volumeInfo.imageLinks?.thumbnail + ')'
+    "
+    class="card">
     <div class="card-content">
-      <h3 class="card-title">{{search.volumeInfo.title}}</h3>
-      <h4 class="card-author"><a href="#" target="_blank" rel="noopener noreferrer">{{search.volumeInfo.authors[0]}}</a></h4>
-      <p>Fecha de publicación: {{search.volumeInfo.publishedDate | date:'longDate':'es'}}</p>
-      <p>{{search.volumeInfo.pageCount}} páginas</p>
-      <a target="_blank" href="{{search.volumeInfo.infoLink}}" class="button">Saber más</a>
+      <h3 class="card-title">{{ search.volumeInfo.title }}</h3>
+      <h4 class="card-author">
+        <a href="#" target="_blank" rel="noopener noreferrer">{{
+          search.volumeInfo.authors[0]
+        }}</a>
+      </h4>
+      <p>
+        Fecha de publicación:
+        {{ search.volumeInfo.publishedDate | date: 'longDate':'es' }}
+      </p>
+      <p>{{ search.volumeInfo.pageCount }} páginas</p>
+      <a target="_blank" href="{{ search.volumeInfo.infoLink }}" class="button"
+        >Saber más</a
+      >
     </div>
   </div>
 </article>

@@ -1,18 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AltCardComponent } from './alt-card.component';
-
-
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { AltCardComponent } from './alt-card.component'
 
 @NgModule({
-  declarations: [
-    AltCardComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    AltCardComponent
-  ]
+  declarations: [AltCardComponent],
+  imports: [CommonModule],
+  exports: [AltCardComponent],
 })
-export class AltCardModule { }
+export class AltCardModule {}

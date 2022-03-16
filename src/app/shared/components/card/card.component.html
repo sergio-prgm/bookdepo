@@ -1,12 +1,13 @@
 <article>
   <a target="_blank" href="{{ book.volumeInfo.infoLink }}">
-    <img *ngIf="book.volumeInfo.imageLinks?.thumbnail; else fallBack"
+    <img
+      *ngIf="book.volumeInfo.imageLinks?.thumbnail; else fallBack"
       src="{{ book.volumeInfo.imageLinks?.thumbnail }}"
       alt="{{ book.volumeInfo.title }}"
-      rel="preload" as="image"
-    />
+      rel="preload"
+      as="image" />
     <ng-template #fallBack>
-      <img src="assets/img/404-book.jpg" alt="error">
+      <img src="assets/img/404-book.jpg" alt="error" />
     </ng-template>
   </a>
   <div class="card-text">

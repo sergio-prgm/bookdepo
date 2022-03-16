@@ -6,10 +6,11 @@ export const environment = {
   production: false,
   apiKey: 'AIzaSyCjnzdqSQ1UnzEOPm6xceX8JJo3l4pLPpQ',
   searchUrl: 'https://www.googleapis.com/books/v1/volumes',
-  listUrl: 'https://www.googleapis.com/books/v1/users/101050476007113578714/bookshelves',
+  listUrl:
+    'https://www.googleapis.com/books/v1/users/101050476007113578714/bookshelves',
   bolano: '/1002/volumes',
-  javascript: '/1001/volumes'
-};
+  javascript: '/1001/volumes',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

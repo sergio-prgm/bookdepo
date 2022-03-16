@@ -1,26 +1,40 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output  } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { ApiService } from '@app/shared/services/api.service';
-import { debounceTime, distinctUntilChanged, filter, map, Subject, takeUntil, tap } from 'rxjs';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core'
+import { FormControl } from '@angular/forms'
+import { ApiService } from '@app/shared/services/api.service'
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  map,
+  Subject,
+  takeUntil,
+  tap,
+} from 'rxjs'
 
 @Component({
   selector: 'app-search-bar',
   template: `
-  <section class="searchbar__container">
-    <div class="searchbar__book">
-      <label for="searchBook">Search</label>
-      <div class="searchbar__inputs">
-        <input 
-        type="text" 
-        class="searchbar__input"
-        placeholder="Search book"
-        [formControl]="searchInput">
-        <button (click)="onClear()">Clear</button>
+    <section class="searchbar__container">
+      <div class="searchbar__book">
+        <label for="searchBook">Search</label>
+        <div class="searchbar__inputs">
+          <input
+            type="text"
+            class="searchbar__input"
+            placeholder="Search book"
+            [formControl]="searchInput" />
+          <button (click)="onClear()">Clear</button>
+        </div>
       </div>
-    </div>
-  </section>
-`,
-  styleUrls: ['./search-bar.component.scss']
+    </section>
+  `,
+  styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnDestroy, OnInit {
   searchInput = new FormControl('')
@@ -28,9 +42,7 @@ export class SearchBarComponent implements OnDestroy, OnInit {
 
   @Output() submitted = new EventEmitter<string>()
 
-  constructor(private apiSvc: ApiService) {
-
-  }
+  constructor(private apiSvc: ApiService) {}
 
   ngOnInit(): void {
     this.onChange()
@@ -47,17 +59,17 @@ export class SearchBarComponent implements OnDestroy, OnInit {
 
   onChange(): void {
     this.searchInput.valueChanges
-    .pipe(
-      tap(res => {
-        this.submitted.emit(res)
-      }),
-      map((search: string) => search.split(' ').join('+')),
-      debounceTime(250),
-      distinctUntilChanged(),
-      filter((search: string) => search !== '' && search.length > 2),
-      tap((search: string) => this.apiSvc.searchData(search)),
-      takeUntil(this.destroy$)
-    ).subscribe()
+      .pipe(
+        tap(res => {
+          this.submitted.emit(res)
+        }),
+        map((search: string) => search.split(' ').join('+')),
+        debounceTime(250),
+        distinctUntilChanged(),
+        filter((search: string) => search !== '' && search.length > 2),
+        tap((search: string) => this.apiSvc.searchData(search)),
+        takeUntil(this.destroy$)
+      )
+      .subscribe()
   }
-
 }
