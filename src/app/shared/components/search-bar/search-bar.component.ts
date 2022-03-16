@@ -29,7 +29,7 @@ import {
             class="searchbar__input"
             placeholder="Search book"
             [formControl]="searchInput" />
-          <button (click)="onClear()">Clear</button>
+          <button class="button" (click)="onClear()">Clear</button>
         </div>
       </div>
     </section>
