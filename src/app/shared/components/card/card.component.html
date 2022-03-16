@@ -3,6 +3,7 @@
     <img *ngIf="book.volumeInfo.imageLinks?.thumbnail; else fallBack"
       src="{{ book.volumeInfo.imageLinks?.thumbnail }}"
       alt="{{ book.volumeInfo.title }}"
+      rel="preload" as="image"
     />
     <ng-template #fallBack>
       <img src="assets/img/404-book.jpg" alt="error">
