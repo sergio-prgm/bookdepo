@@ -11,6 +11,9 @@ export class ApiService {
 
   private bookSubject = new BehaviorSubject<Book[]>([])
   books$ = this.bookSubject.asObservable()
+  
+  private searchSubject = new BehaviorSubject<Book[]>([])
+  searchs$ = this.searchSubject.asObservable()
 
   constructor(private readonly http: HttpClient) { }
 
@@ -24,7 +27,7 @@ export class ApiService {
       .pipe(
       pluck('items'),
       tap(books => {
-        this.addImg([...books])
+        this.filterAuthor([...books])
         console.log(books)
       })
     ).subscribe()
@@ -46,17 +49,15 @@ export class ApiService {
   }
 
   private addImg(books: Book[]): void {
-    // let bookImg = {
-    //   volumeInfo: {
-    //     imageLinks: {
-    //       thumbnail: 'https://scrc.siu.edu/_common/images/new-images/rb3.jpg'
-    //     }
-    //   }
-    // }
     const newBook = books.filter(book => book.volumeInfo.authors
     )
-
     this.bookSubject.next(newBook)
+  }
+
+  private filterAuthor(books: Book[]): void {
+    const newBook = books.filter(book => book.volumeInfo.authors
+    )
+    this.searchSubject.next(newBook)
   }
 
 }

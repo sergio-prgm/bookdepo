@@ -5,6 +5,7 @@ import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
 import { SearchBarModule } from '@app/shared/components/search-bar/search-bar.module';
 import { CardModule } from '@app/shared/components/card/card.module';
+import { AltCardModule } from '@app/shared/components/alt-card/alt-card.module';
 
 
 
@@ -16,7 +17,8 @@ import { CardModule } from '@app/shared/components/card/card.module';
     CommonModule,
     SearchRoutingModule,
     SearchBarModule,
-    CardModule
+    CardModule,
+    AltCardModule
   ]
 })
 export class SearchModule { }

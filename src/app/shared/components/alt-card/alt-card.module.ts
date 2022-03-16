@@ -10,6 +10,9 @@ import { AltCardComponent } from './alt-card.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    AltCardComponent
   ]
 })
 export class AltCardModule { }
