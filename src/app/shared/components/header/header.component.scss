@@ -2,7 +2,7 @@
 
 nav.menu {
   display: flex;
-  gap: 2rem;
+  gap: 32px;
 
   img {
     width: 75px;
@@ -10,22 +10,33 @@ nav.menu {
 
   ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 0;
     margin: 2rem 6rem;
     width: 100%;
-    li {
-      list-style: none;
-    }
-    a {
-      &:visited,
-      &:focus {
-        color: $neutral-900;
-      }
 
-      &:hover {
-        color: $accent-500;
+    .button {
+      background-color: $accent-500;
+      color: $neutral-100;
+      transition: transform 100ms, box-shadow 100ms;
+      margin: 0;
+
+      &:active {
+        background-color: $complementary;
+        box-shadow: $complementary 0 3px 5px inset;
+        outline: 0;
+      }
+      &:not([disabled]):active,
+      &:focus {
+        box-shadow: $neutral-200 2px 2px 0 0, $complementary 2px 2px 0 1px;
+        transform: translate(2px, 2px);
+        background-color: $complementary;
+      }
+    }
+    @media (min-width: 768px) {
+      .button {
+        padding: 12px 50px;
       }
     }
   }

@@ -1,5 +1,13 @@
+@import 'variables';
+
 section.about__page {
-  margin-top: 2rem;
+  margin: 0;
+  padding: 2rem 1.5rem;
+  .title {
+    color: $complementary;
+    font-weight: 900;
+    font-size: 1.8rem;
+  }
   .about__container {
     display: flex;
     margin-top: 2rem;
@@ -7,5 +15,11 @@ section.about__page {
   }
   .about__copy {
     text-align: end;
+  }
+  .about__img {
+    img {
+      min-width: 200px;
+      aspect-ratio: auto;
+    }
   }
 }

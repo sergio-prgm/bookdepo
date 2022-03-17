@@ -1,8 +1,8 @@
 @import 'variables';
 
-label {
-  padding: 0.5rem 1.75rem;
-}
+// label {
+//   padding: 0.5rem 1.75rem;
+// }
 .searchbar__inputs {
   display: flex;
   justify-content: space-between;
@@ -43,35 +43,7 @@ label {
 
   .button {
     background-color: $accent-500;
-    border: 1px solid $accent-500;
-    border-radius: 4px;
-    box-shadow: $neutral-100 4px 4px 0 0, $accent-500 4px 4px 0 1px;
-    box-sizing: border-box;
     color: $neutral-100;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 500;
-    line-height: 1.4;
-    margin: 0 10px 10px 0;
-    overflow: visible;
-    padding: 0.75rem 2.5rem;
-    text-align: center;
-    text-transform: none;
-    // touch-action: manipulation;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: middle;
-
-    white-space: nowrap;
-    transition: transform 75ms, box-shadow 75ms;
-    &:active {
-      box-shadow: $accent-500 0 3px 5px inset;
-      outline: 0;
-    }
-    &:not([disabled]):active {
-      box-shadow: $neutral-200 2px 2px 0 0, $accent-500 2px 2px 0 1px;
-      transform: translate(2px, 2px);
-    }
   }
 }
 

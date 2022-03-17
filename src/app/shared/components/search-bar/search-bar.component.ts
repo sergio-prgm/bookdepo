@@ -22,7 +22,6 @@ import {
   template: `
     <section class="searchbar__container">
       <div class="searchbar__book">
-        <label for="searchBook">Search</label>
         <div class="searchbar__inputs">
           <input
             type="text"
