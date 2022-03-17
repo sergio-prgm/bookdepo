@@ -1,21 +1,19 @@
 <article>
   <div
     [style.background-image]="
-      'url(' + search.volumeInfo.imageLinks?.thumbnail + ')'
+      'url(' + search.volumeInfo.imageLinks?.thumbnail || defaultImg + ')'
     "
     class="card">
     <div class="card-content">
       <h3 class="card-title">{{ search.volumeInfo.title }}</h3>
       <h4 class="card-author">
-        <a href="#" target="_blank" rel="noopener noreferrer">{{
-          search.volumeInfo.authors[0]
-        }}</a>
+        {{ search.volumeInfo.authors[0] }}
       </h4>
-      <p>
+      <!-- <p>
         Fecha de publicación:
         {{ search.volumeInfo.publishedDate | date: 'longDate':'es' }}
       </p>
-      <p>{{ search.volumeInfo.pageCount }} páginas</p>
+      <p>{{ search.volumeInfo.pageCount }} páginas</p> -->
       <a target="_blank" href="{{ search.volumeInfo.infoLink }}" class="button"
         >Saber más</a
       >

@@ -4,10 +4,15 @@ import { ApiService } from '@app/shared/services/api.service'
 @Component({
   selector: 'app-collections',
   template: `
-    <section class="book__collection">
-      <h2>Bienvenido al punto de encuentro de todos tus libros</h2>
-      <div class="card-container">
-        <app-card *ngFor="let book of books$ | async" [book]="book"></app-card>
+    <section class="collection__container">
+      <h1 class="collection__title">
+        Bienvenido al punto de encuentro de todos tus libros
+      </h1>
+      <div class="colection__card-container">
+        <app-card
+          class="collection__card"
+          *ngFor="let book of books$ | async"
+          [book]="book"></app-card>
       </div>
     </section>
   `,

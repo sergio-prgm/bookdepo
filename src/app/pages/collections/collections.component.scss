@@ -1,1 +1,21 @@
 @import 'variables';
+
+section.collection__container {
+  display: flex;
+  flex-direction: column;
+  .collection__title {
+    align-self: flex-start;
+    color: $complementary;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+  }
+  .colection__card-container {
+    padding: 0rem 2rem;
+    align-self: center;
+    justify-self: center;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 340px);
+    gap: 2rem;
+  }
+}

@@ -14,5 +14,7 @@ import { Book } from '@app/shared/interfaces/data.interface'
 })
 export class AltCardComponent {
   @Input() search!: Book
+  defaultImg: string = 'assets/img/book-404.jpg'
+
   constructor() {}
 }

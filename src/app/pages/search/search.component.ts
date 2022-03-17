@@ -3,21 +3,25 @@ import { ApiService } from '@app/shared/services/api.service'
 
 @Component({
   selector: 'app-search',
-  template: ` <app-search-bar (submitted)="onSearch($event)"></app-search-bar>
-    <ng-container *ngIf="conditional">
-      <ng-container *ngIf="searchs$ | async as searchs; else showEmpty">
-        <app-alt-card
-          *ngFor="let search of searchs"
-          [search]="search"></app-alt-card>
+  template: `
+    <section class="search__container">
+      <app-search-bar (submitted)="onSearch($event)"></app-search-bar>
+      <ng-container *ngIf="conditional">
+        <div class="card__container grid" *ngIf="searchs$ | async as searchs">
+          <app-alt-card
+            *ngFor="let search of searchs"
+            [search]="search"></app-alt-card>
+        </div>
       </ng-container>
-    </ng-container>
+    </section>
 
-    <ng-template #showEmpty>
+    <!-- <ng-template #showEmpty>
       <div class="noResults">
         <h2 class="title">No results</h2>
         <img src="../../../assets/img/404.jpeg" alt="404" />
       </div>
-    </ng-template>`,
+    </ng-template> -->
+  `,
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {

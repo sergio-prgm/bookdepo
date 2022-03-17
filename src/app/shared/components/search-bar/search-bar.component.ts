@@ -21,15 +21,13 @@ import {
   selector: 'app-search-bar',
   template: `
     <section class="searchbar__container">
-      <div class="searchbar__book">
-        <div class="searchbar__inputs">
-          <input
-            type="text"
-            class="searchbar__input"
-            placeholder="Search book"
-            [formControl]="searchInput" />
-          <button class="button" (click)="onClear()">Clear</button>
-        </div>
+      <div class="searchbar__inputs">
+        <input
+          type="text"
+          class="searchbar__input"
+          placeholder="Search book"
+          [formControl]="searchInput" />
+        <button class="button" (click)="onClear()">Clear</button>
       </div>
     </section>
   `,

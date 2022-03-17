@@ -1,0 +1,20 @@
+@import 'variables';
+
+section.search__container {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  margin: auto;
+  .grid {
+    display: grid;
+  }
+  .card__container {
+    padding: 2rem 2rem;
+    align-self: center;
+    justify-self: center;
+    max-width: 100%;
+
+    grid-template-columns: repeat(auto-fill, 210px);
+    gap: 2rem;
+  }
+}
