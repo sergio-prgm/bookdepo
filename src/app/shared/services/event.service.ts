@@ -10,7 +10,6 @@ export class EventService {
 
   searchEvent(data: string): void {
     this.eventSubject.next(!!data)
-    console.log(`Event -> ${!!data} ${data}`)
   }
 
   constructor() {}
