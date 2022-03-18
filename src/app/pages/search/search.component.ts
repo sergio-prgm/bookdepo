@@ -1,19 +1,21 @@
 import { Component } from '@angular/core'
 import { ApiService } from '@app/shared/services/api.service'
+import { EventService } from '@app/shared/services/event.service'
 
 @Component({
   selector: 'app-search',
   template: `
-    <section class="search__container">
-      <app-search-bar (submitted)="onSearch($event)"></app-search-bar>
-      <ng-container *ngIf="conditional">
-        <div class="card__container grid" *ngIf="searchs$ | async as searchs">
-          <app-alt-card
-            *ngFor="let search of searchs"
-            [search]="search"></app-alt-card>
+    <ng-container *ngIf="event$ | async">
+      <section class="modal flex">
+        <div class="modal__body flex">
+          <div class="card__container grid" *ngIf="searchs$ | async as searchs">
+            <app-alt-card
+              *ngFor="let search of searchs"
+              [search]="search"></app-alt-card>
+          </div>
         </div>
-      </ng-container>
-    </section>
+      </section>
+    </ng-container>
 
     <!-- <ng-template #showEmpty>
       <div class="noResults">
@@ -26,12 +28,13 @@ import { ApiService } from '@app/shared/services/api.service'
 })
 export class SearchComponent {
   searchs$ = this.apiSvc.searchs$
-  conditional: boolean = false
+  condition: boolean = false
+  event$ = this.eventSvc.event$
 
-  constructor(private apiSvc: ApiService) {}
+  constructor(private apiSvc: ApiService, private eventSvc: EventService) {}
 
   onSearch(term: string): void {
-    if (term) this.conditional = true
-    else this.conditional = false
+    if (term) this.condition = true
+    else this.condition = false
   }
 }
