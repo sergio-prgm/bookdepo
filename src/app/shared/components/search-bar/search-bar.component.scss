@@ -3,50 +3,52 @@
 // label {
 //   padding: 0.5rem 1.75rem;
 // }
-.searchbar__inputs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-direction: row;
+section.searchbar__container {
+  padding: 0.75rem 1.75rem 0.5rem 1.5rem;
+  .searchbar__inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
 
-  .searchbar__input {
-    width: 100%;
-    display: inline-block;
-    background-color: $neutral-100;
-    border: 1px solid $accent-500;
-    border-radius: 4px;
-    box-shadow: $neutral-100 4px 4px 0 0, $accent-500 4px 4px 0 1px;
+    .searchbar__input {
+      width: 100%;
+      display: inline-block;
+      background-color: $neutral-100;
+      border: 1px solid $accent-500;
+      border-radius: 4px;
+      box-shadow: $neutral-100 4px 4px 0 0, $accent-500 4px 4px 0 1px;
 
-    color: $neutral-900;
-    line-height: 1.6;
-    font-weight: 500;
-    margin: 0 10px 10px 1rem;
-    overflow: visible;
-    box-sizing: border-box;
+      color: $neutral-900;
+      line-height: 1.6;
+      font-weight: 500;
+      margin-bottom: 10px;
+      overflow: visible;
+      box-sizing: border-box;
 
-    padding: calc(0.6rem + 1px) 1.25rem;
-    text-transform: none;
-    vertical-align: middle;
-    white-space: nowrap;
-    transition: box-shadow 100ms ease;
+      padding: calc(0.6rem + 1px) 1.25rem;
+      text-transform: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      transition: box-shadow 100ms ease;
 
-    &:focus-within,
-    &:active {
-      outline: none;
-      box-shadow: $accent-500 4px 4px 0 0, $accent-500 4px 4px 0 1px;
+      &:focus-within,
+      &:active {
+        outline: none;
+        box-shadow: $accent-500 4px 4px 0 0, $accent-500 4px 4px 0 1px;
+      }
+      // &:not([disabled]):active {
+      //   box-shadow: $neutral-200 2px 2px 0 0, $accent-500 2px 2px 0 1px;
+      // }
     }
-    // &:not([disabled]):active {
-    //   box-shadow: $neutral-200 2px 2px 0 0, $accent-500 2px 2px 0 1px;
-    // }
-  }
 
-  .button {
-    background-color: $accent-500;
-    color: $neutral-100;
+    .button {
+      background-color: $accent-500;
+      color: $neutral-100;
+    }
   }
 }
-
 // @media (min-width: 768px) {
 //   .button-50 {
 //     padding: 12px 50px;
