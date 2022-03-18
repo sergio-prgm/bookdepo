@@ -16,5 +16,6 @@ import { AltCardModule } from '@app/shared/components/alt-card/alt-card.module'
     CardModule,
     AltCardModule,
   ],
+  exports: [SearchComponent],
 })
 export class SearchModule {}

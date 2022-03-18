@@ -13,11 +13,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/about/about.module').then(m => m.AboutModule),
   },
-  {
-    path: 'favorites',
-    loadChildren: () =>
-      import('./pages/favorites/favorites.module').then(m => m.FavoritesModule),
-  },
+  // {
+  //   path: 'favorites',
+  //   loadChildren: () =>
+  //     import('./pages/favorites/favorites.module').then(m => m.FavoritesModule),
+  // },
   {
     path: 'book-details/:id',
     loadChildren: () =>
