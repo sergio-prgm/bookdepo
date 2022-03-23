@@ -9,7 +9,7 @@ section.searchbar__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     flex-direction: row;
 
     .searchbar__input {
@@ -28,6 +28,7 @@ section.searchbar__container {
       box-sizing: border-box;
 
       padding: calc(0.6rem + 1px) 1.25rem;
+      margin-right: 10px;
       text-transform: none;
       vertical-align: middle;
       white-space: nowrap;
@@ -46,6 +47,26 @@ section.searchbar__container {
     .button {
       background-color: $accent-500;
       color: $neutral-100;
+    }
+  }
+}
+@media (max-width: 668px) {
+  section.searchbar__container {
+    padding-right: 1.75rem;
+
+    .searchbar__inputs {
+      flex-wrap: wrap;
+      width: 100%;
+      .searchbar__input {
+        flex-grow: 100;
+        width: auto;
+        min-width: 33ch;
+        margin-right: 10px;
+      }
+      .button {
+        width: auto;
+        flex-grow: 10;
+      }
     }
   }
 }
