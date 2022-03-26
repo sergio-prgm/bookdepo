@@ -60,7 +60,7 @@ export class SearchBarComponent implements OnDestroy, OnInit {
       .pipe(
         tap((res: string) => this.eventSvc.searchEvent(res)),
         map((search: string) => search.split(' ').join('+')),
-        debounceTime(250),
+        debounceTime(150),
         distinctUntilChanged(),
         filter((search: string) => search !== '' && search.length > 2),
         tap((search: string) => this.apiSvc.searchData(search)),

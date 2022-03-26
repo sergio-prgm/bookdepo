@@ -50,7 +50,7 @@ section.searchbar__container {
     }
   }
 }
-@media (max-width: 668px) {
+@media (max-width: 568px) {
   section.searchbar__container {
     padding-right: 1.75rem;
 
@@ -60,7 +60,6 @@ section.searchbar__container {
       .searchbar__input {
         flex-grow: 100;
         width: auto;
-        min-width: 33ch;
         margin-right: 10px;
       }
       .button {

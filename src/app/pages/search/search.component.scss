@@ -13,6 +13,7 @@ section.modal {
   background-color: $accent-trans;
   align-items: stretch;
   position: absolute;
+  z-index: 5;
 
   .modal__body {
     margin: 0;
